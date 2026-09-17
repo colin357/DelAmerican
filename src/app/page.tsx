@@ -38,7 +38,6 @@ export default function Home() {
         <Image src={homeImages.hero} alt="S L X Atlanta at twilight" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20" />
         <div className="container-x relative pb-20 pt-48 md:pb-28">
-          <p className="eyebrow">{site.fullName}</p>
           <h1 className="mt-4 max-w-4xl text-5xl leading-none sm:text-6xl md:text-8xl">
             Ultimate Residential Lifestyle
           </h1>
