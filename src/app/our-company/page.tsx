@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import TeamPhoto from "@/components/TeamPhoto";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { homeImages, team } from "@/lib/data";
@@ -56,9 +56,7 @@ export default function CompanyPage() {
           <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((m) => (
               <div key={m.name}>
-                <div className="relative aspect-[4/5] overflow-hidden bg-ink-3">
-                  <Image src={m.image} alt={m.name} fill className="object-cover object-top" sizes="(min-width: 1024px) 33vw, 50vw" />
-                </div>
+                <TeamPhoto name={m.name} src={m.image} />
                 <h3 className="mt-5 text-2xl">{m.name}</h3>
                 <p className="text-sm text-muted">{m.role}</p>
               </div>

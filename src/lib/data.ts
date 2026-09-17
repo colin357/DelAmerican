@@ -254,6 +254,8 @@ export const partners = [
 export const team = [
   { name: "Anthony DelGuidice", role: "President & Managing Director", image: `${A}/5ed1e99e646819409910eedf_Anthony2.jpg` },
   { name: "Fazira DelGuidice", role: "Chief Design Officer", image: `${A}/67cda46bb17e495ca47ba9d4_Screenshot%202025-03-09%20at%202.23.31%E2%80%AFpm.png` },
+  // Drop the headshot at public/team/matt-edwards.jpg; the card shows initials until it exists.
+  { name: "Matt Edwards", role: "Development Consultant", image: "/team/matt-edwards.jpg" },
 ];
 
 export type PressCategory = "Awards" | "Market Data" | "New Developments";
