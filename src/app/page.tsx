@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
-import { homeImages, projects, services, site } from "@/lib/data";
+import TeamPhoto from "@/components/TeamPhoto";
+import { homeImages, projects, services, site, team } from "@/lib/data";
 
 const portfolio = [
   {
@@ -75,23 +76,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
+      {/* Executive team */}
       <section className="bg-ink-2 py-24">
-        <div className="container-x grid items-center gap-14 md:grid-cols-2">
-          <div className="relative aspect-[4/5] max-w-md overflow-hidden">
-            <Image src={homeImages.about} alt="Christopher DelGuidice" fill className="object-cover" />
-          </div>
-          <div>
-            <p className="eyebrow">About Us · Who We Are</p>
-            <blockquote className="mt-6 font-serif text-3xl italic leading-snug md:text-4xl">
-              “Discover Exceptional Living … Experience a Del American Community.”
-            </blockquote>
-            <p className="mt-8 font-display text-lg uppercase tracking-widest">Christopher DelGuidice</p>
-            <p className="text-sm text-muted">Former CEO of Del American</p>
-            <Link href="/our-company" className="btn mt-10">
-              Our Company
+        <div className="container-x">
+          <div className="mb-12 flex items-end justify-between">
+            <div>
+              <p className="eyebrow">About Us · Who We Are</p>
+              <h2 className="mt-3 text-4xl md:text-5xl">Our Executive Team</h2>
+            </div>
+            <Link href="/our-company" className="hidden font-display text-sm uppercase tracking-[0.25em] hover:text-accent md:block">
+              Our Company →
             </Link>
           </div>
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((m) => (
+              <div key={m.name}>
+                <TeamPhoto name={m.name} src={m.image} />
+                <h3 className="mt-5 text-2xl">{m.name}</h3>
+                <p className="text-sm text-muted">{m.role}</p>
+              </div>
+            ))}
+          </div>
+          <Link href="/our-company" className="btn mt-12 md:hidden">
+            Our Company
+          </Link>
         </div>
       </section>
 
