@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #111111;
+  --color-ink-2: #1a1a1a;
+  --color-ink-3: #222222;
+  --color-line: rgba(255, 255, 255, 0.12);
+  --color-muted: #a3a3a3;
+  --color-accent: #c8a96a;
+  --font-sans: var(--font-hind), system-ui, sans-serif;
+  --font-display: var(--font-roboto-condensed), sans-serif;
+  --font-serif: var(--font-noto-serif), serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+@utility container-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 768px) { padding-inline: 2.5rem; }
+}
+
+@utility eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid #ffffff;
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  transition: background-color 0.2s, color 0.2s;
+  &:hover { background: #ffffff; color: #111111; }
+}
+
+@utility btn-solid {
+  background: #ffffff;
+  color: #111111;
+  &:hover { background: var(--color-accent); border-color: var(--color-accent); color: #111111; }
+}
+
+@utility field {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.9rem 0;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+  &::placeholder { color: #737373; }
+  &:focus { border-color: #ffffff; }
+}
