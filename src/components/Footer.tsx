@@ -50,6 +50,12 @@ export default function Footer() {
               Privacy Policy
             </Link>
           </p>
+          <p>
+            Designed by{" "}
+            <a href="https://ownitsocial.com" target="_blank" rel="noopener" className="underline-offset-4 hover:text-white hover:underline">
+              Own It Social
+            </a>
+          </p>
         </div>
       </div>
     </footer>
